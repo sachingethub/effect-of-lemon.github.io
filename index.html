@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Investigating Effect of Lemon Juice on Different Indicators</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Drag the lemon juice on the other element to see the recation</h1>
+        <div class="container-2">
+            <div class="lemon_juice" id="boxes">
+                <p>lemon-juice</p>
+                <img src="/orangejice.png" alt="orangepng" class="lemon-juice" draggable="true" id="draggableItem">
+            </div>
+            <div class="litmus" id="boxes" ondragover="allowDrop(event)" ondrop="drop(event)">litmus</div>
+            <div class="methyl_orange" id="boxes" ondragover="allowDrop(event)" ondrop="drop(event)">methyl-orange</div>
+            <div class="phenolphtalein" id="boxes2"  ondragover="allowDrop(event)" ondrop="drop(event)">phenolphtalein</div>
+            <div class="universal_indicator" id="boxes" ondragover="allowDrop(event)" ondrop="drop(event)">universal-indicator</div>
+        </div>        
+        <h1>Investigating the Effect of Lemon Extract on Different Indicators</h1>
+        <!-- Litmus 
+Methyl orange 
+Phenolphthalein 
+Universal indicator  -->
+        <!-- Table with text boxes for learner's response -->
+        <table>
+            <tr>
+                <th>Indicator</th>
+                <th>Observation with Lemon Juice</th>
+            </tr>
+            <tr>
+                <td>Litmus</td>
+                <td><input type="text" id="litmus" placeholder="Enter color"></td>
+            </tr>
+            <tr>
+                <td>Methyl Orange</td>
+                <td><input type="text" id="methyl-orange" placeholder="Enter color"></td>
+            </tr>
+            <tr>
+                <td>Phenolphthalein</td>
+                <td><input type="text" id="phenolphthalein" placeholder="Enter color"></td>
+            </tr>
+            <tr>
+                <td>Universal Indicator</td>
+                <td><input type="text" id="universal-indicator" placeholder="Enter color"></td>
+            </tr>
+        </table>
+
+        <button onclick="checkAnswers()">Submit Answers</button>
+
+        <!-- Correct answers checkbox section -->
+        <div id="answers" style="display:none;">
+            <h3>Correct Answers:</h3>
+            <ul>
+                <li><input type="checkbox" id="litmus-correct" disabled> Litmus: Red</li>
+                <li><input type="checkbox" id="methyl-orange-correct" disabled> Methyl Orange: Red</li>
+                <li><input type="checkbox" id="phenolphthalein-correct" disabled> Phenolphthalein: Colourless</li>
+                <li><input type="checkbox" id="universal-indicator-correct" disabled> Universal Indicator: Red</li>
+            </ul>
+        </div>
+
+        <!-- Nature of lemon juice response -->
+        <div class="nature">
+            <p>From the observations you have made above, what is the nature of lemon juice?</p>
+            <input type="text" id="nature" placeholder="Enter nature of lemon juice">
+            <button onclick="checkNature()">Check Answer</button>
+
+            <div id="nature-answer" style="display:none;">
+                <p><input type="checkbox" id="nature-correct" disabled> Correct Answer: It is an acid</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
